@@ -1,0 +1,93 @@
+{
+  "basicInformation": [
+    {
+      "name": "fullName",
+      "label": "Full Name",
+      "type": "text",
+      "placeholder": "Enter your fullName",
+      "validation": {
+        "required": "fullName is required"
+      }
+    },
+    {
+      "name": "email",
+      "label": "Email",
+      "type": "email",
+      "placeholder": "Enter your email"
+    },
+    {
+      "name": "bloodGroup",
+      "label": "Blood Group",
+      "type": "select",
+      "placeholder": "Please select your bloodGroup",
+      "validation": {
+        "required": "Blood group is required"
+      }
+    },
+    {
+      "name": "dateOfbirth",
+      "label": "Date of birth",
+      "type": "date",
+      "placeholder": "Please enter your dateOfbirth",
+      "validation": {
+        "required": "dateOfbirth is required"
+      }
+    },
+    {
+      "name": "occupation",
+      "label": "Occupation",
+      "type": "select",
+      "placeholder": "Please select your occupation",
+      "validation": {
+        "required": "Occupation is required"
+      }
+    }
+  ],
+  "documentInformation": [
+    {
+      "name": "documentType",
+      "label": "Document Type",
+      "type": "select",
+      "placeholder": "Please select your documentType",
+      "validation": {
+        "required": "documentType is required"
+      }
+    },
+    {
+      "name": "documentNumber",
+      "label": "Document Number",
+      "type": "number",
+      "placeholder": "Please enter your documentNumber",
+      "validation": {
+        "required": "documentNumber is required"
+      }
+    },
+    {
+      "name": "documentExpireat",
+      "label": "Document Expireat",
+      "type": "number",
+      "placeholder": "Please enter your documentExpireat",
+      "validation": {
+        "required": "documentExpireat is required"
+      }
+    },
+    {
+      "name": "documentfront",
+      "label": "Document front",
+      "type": "file",
+      "placeholder": "Please upload your documentfront",
+      "validation": {
+        "required": "documentfront is required"
+      }
+    },
+    {
+      "name": "documentBack",
+      "label": "Document Back",
+      "type": "file",
+      "palceholder": "Please upload your documentBack",
+      "validation": {
+        "required": "documentBack is required"
+      }
+    }
+  ]
+}

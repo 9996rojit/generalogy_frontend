@@ -1,0 +1,31 @@
+{
+  "register":[
+    {
+      "name":"userName",
+      "label":"Username",
+      "type":"text",
+      "placeholder":"Please enter your user name",
+      "validation":{"required": "Password is required", "minLength": { "value": 6, "message": "Password must be at least 6 characters"}}
+    },{
+      "name":"phoneNumber",
+      "label":"Phonenumber",
+      "type":"number",
+      "placeholder":"Please enter your number",
+      "validation":{"required":"Number is required","minlength":{"value":10,"message":"Number must be atleast 10 characters"}}
+      },{
+     "name":"password",
+     "label":"Password",
+     "type":"password",
+     "placeholder":"Please enter your password",
+     "validation":{"required":"Password is required", "minlength":{"value":6,"messsage":"Paaword must atleast 6 charcters"}}
+      },
+      {
+"name":"confirmPassword",
+"label":"Confirm password",
+"type":"password",
+"placeholder":"Please confirm your password",
+"validation":{"required":"Please confirm your password"},
+"watch":"Password"
+}
+]
+}

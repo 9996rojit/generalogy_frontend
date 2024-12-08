@@ -1,0 +1,49 @@
+{
+  "address": [
+    {
+      "name": "desh",
+      "label": "Desh",
+      "type": "text",
+      "placeholder": "Please enter your Desh",
+      "validation": {
+        "required": "Desh is required"
+      }
+    },
+    {
+      "name": "pradesh",
+      "label": "Pradesh",
+      "type": "text",
+      "placeholder": "Please enter your pradesh",
+      "validation": {
+        "required": "Pradesh is required"
+      }
+    },
+    {
+      "name": "jilla",
+      "label": "Jilla",
+      "type": "text",
+      "placeholder": "Please enter your jilla",
+      "validation": {
+        "required": "Jilla is required"
+      }
+    },
+    {
+      "name": "ward_no",
+      "label": "ward.no",
+      "type": "number",
+      "placeholder": "Please enter your ward no.",
+      "validation": {
+        "required": "Ward no. is required"
+      }
+    },
+    {
+      "name": "municipality",
+      "label": "Municipality",
+      "type": "text",
+      "placeholder": "Please enter you municipality",
+      "validation": {
+        "required": "Municipality is required"
+      }
+    }
+  ]
+}
