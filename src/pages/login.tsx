@@ -32,7 +32,7 @@ const Login: React.FC = () => {
           <div className='flex items-center justify-center gap-2 mb-2'>
             <img src="./logo_image.png" alt='logo' width={50} height={50} />
             <div>
-              <h3 className='font-extrabold'>Generalogy</h3>
+              <h3 className='font-extrabold'>Bansawoli</h3>
               <h4 className='font-semibold'>Login</h4>
             </div>
           </div>

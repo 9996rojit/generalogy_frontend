@@ -1,57 +1,70 @@
 {
-  "add-contact":[
+  "addContact": [
     {
-      "name":"Full Name",
-    "label":"Full name",
-    "type":"text",
-    "placeholder":"Please enter your Full Name",
-    "validation":{"required":"Full Name is required"}
-    },{
-      "name":"Date of birth",
-    "label":"Date of birth",
-    "type":"date",
-    "placeholder":"Please enter your Date of birth",
-    "validation":{"required":"Date of birth is required"}
-     },{
-      "name":"bloodgroup",
-    "label":"bloodgroup",
-  "type":"select",
-"placeholder":"Please select your bloodgroup",
-"validation":{"required":"Bloodgroup is required"}
-},{
-  "name":"gender",
-"label":"gender",
-"type":"select",
-"placeholder":"Please select your gender",
-"validation":{"required":"Gender is required"}
-},{
-  "name":"photo",
-"label":"photo",
-"type":"file",
-"placeholder":"Please upload your photo",
-"validation":{"required":"Photo is required"}
-},{
-  "name":"occupation",
-"label":"occupation",
-"type":"select",
-"placeholder":"Please select your occupation",
-"validation":{"required":"Occupation is required"}
-},{
-  "name":"remarks",
-"label":"remarks",
-"type":"text area",
-"placeholder":"Please enter your remarks"
-},{
-  "name":"remarks history",
-"label":"remarks history",
-"type":"text area",
-"placeholder":"Please enter your remarks history"
-},{
-  "name":"document",
-"label":"document",
-"type":"text area",
-"placeholder":"Please add your document",
-"validation":{"required":"Document is required"}
-}
+      "name": "fullName",
+      "label": "Full name",
+      "type": "text",
+      "placeholder": "Please enter your Full Name",
+      "validation": {
+        "required": "Full Name is required"
+      }
+    },
+    {
+      "name": "dob",
+      "label": "Date of birth",
+      "type": "date",
+      "placeholder": "Please enter your Date of birth",
+      "validation": {
+        "required": "Date of birth is required"
+      }
+    },
+    {
+      "name": "bloodGroup",
+      "label": "bloodgroup",
+      "type": "select",
+      "placeholder": "Please select your bloodgroup",
+      "validation": {
+        "required": "Bloodgroup is required"
+      }
+    },
+    {
+      "name": "gender",
+      "label": "gender",
+      "type": "select",
+      "placeholder": "Please select your gender",
+      "validation": {
+        "required": "Gender is required"
+      }
+    },
+    {
+      "name": "photo",
+      "label": "photo",
+      "type": "file",
+      "placeholder": "Please upload your photo",
+      "validation": {
+        "required": "Photo is required"
+      }
+    },
+    {
+      "name": "occupation",
+      "label": "occupation",
+      "type": "select",
+      "placeholder": "Please select your occupation",
+      "validation": {
+        "required": "Occupation is required"
+      }
+    },
+    {
+      "name": "remarks",
+      "label": "remarks",
+      "type": "textarea",
+      "placeholder": "Please enter your remarks"
+    },
+    {
+      "name": "remarksHistory",
+      "label": "remarks history",
+      "type": "textarea",
+      "placeholder": "Please enter your remarks history"
+    }
   ]
 }

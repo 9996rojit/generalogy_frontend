@@ -1,17 +1,27 @@
-{"fields":[
-  {
-    "id": "phoneNumber",
-    "label": "Phone Number",
-    "type": "number",
-    "placeholder": "Enter your phone number",
-    "validation": { "required": "Phone number is required", "pattern": "/^[0-9]{10}$/" }
-  },
-  {
-    "id": "password",
-    "label": "Password",
-    "type": "password",
-    "placeholder": "Enter your password",
-    "validation": { "required": "Password is required", "minLength": { "value": 6, "message": "Password must be at least 6 characters" } }
-  }
-]
+{
+  "fields": [
+    {
+      "id": "phoneNumber",
+      "label": "Phone Number",
+      "type": "number",
+      "placeholder": "Enter your phone number",
+      "validation": {
+        "required": "Phone number is required",
+        "pattern": "/^[0-9]{10}$/"
+      }
+    },
+    {
+      "id": "password",
+      "label": "Password",
+      "type": "password",
+      "placeholder": "Enter your password",
+      "validation": {
+        "required": "Password is required",
+        "minLength": {
+          "value": 6,
+          "message": "Password must be at least 6 characters"
+        }
+      }
+    }
+  ]
 }

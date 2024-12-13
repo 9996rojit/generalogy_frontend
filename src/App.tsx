@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Register from './pages/register';
 import VerifyOtp from './pages/otpverify';
 import Dashboard from './pages/dashboard'; // Example of a protected route
-import ProtectedRoute from '/components/protectedroute';
+import ProtectedRoute from './components/protectedroute';
 import Login from './pages/login';
 import KYCVerify from './pages/verifyKyc';
 import FamilyTree from './pages/relations';
@@ -49,19 +49,19 @@ const router = createBrowserRouter([
   {
     path: "/verify-kyc",
     element: (
-      // <ProtectedRoute>
-      <KYCVerify />
-      // </ProtectedRoute>
+      <ProtectedRoute>
+        <KYCVerify />
+      </ProtectedRoute>
     ),
   },
   {
     path: "/dashboard",
     element: (
-      // <ProtectedRoute>
-      <DashboardComponent>
-        <DashboardContent />
-      </DashboardComponent>
-      // </ProtectedRoute>
+      <ProtectedRoute>
+        <DashboardComponent>
+          <DashboardContent />
+        </DashboardComponent>
+      </ProtectedRoute>
     ),
     children: [
 
@@ -71,21 +71,28 @@ const router = createBrowserRouter([
   },
   {
     path: 'relations', element: (
-      <DashboardComponent>
-        <FamilyTree />
-      </DashboardComponent>)
+      <ProtectedRoute>
+        <DashboardComponent>
+          <FamilyTree />
+        </DashboardComponent>
+      </ProtectedRoute>)
   },
   {
     path: 'user/:id', element: (
-      <DashboardComponent>
-        <SingleUserPage />
-      </DashboardComponent>)
+      <ProtectedRoute>
+        <DashboardComponent>
+          <SingleUserPage />
+        </DashboardComponent>
+      </ProtectedRoute>
+    )
   },
   {
     path: 'overview', element: (
-      <DashboardComponent>
-        <Overview />
-      </DashboardComponent>)
+      <ProtectedRoute>
+        <DashboardComponent>
+          <Overview />
+        </DashboardComponent>
+      </ProtectedRoute>)
   },
   // Add more routes as needed
 ]);

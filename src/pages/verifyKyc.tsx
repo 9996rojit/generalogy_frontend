@@ -9,12 +9,12 @@ interface KYCFormData {
   phoneNumber: string;
   bloodGroup: string;
   occupation: ''
-  dateOfBirth: string;
-  idDocument_front: File | null;
-  idDocument_back: File | null;
+  dob: string;
+  idDocumentFront: File | null;
+  idDocumentBack: File | null;
   documentNumber: string;
   documentType: string;
-  expires_in: string
+  documentExpiresin: string
   permanentAddress: Address;
   temporaryAddress: Address;
 }
@@ -35,12 +35,12 @@ const KYCVerify: React.FC = () => {
       phoneNumber: '',
       bloodGroup: '',
       occupation: '',
-      dateOfBirth: '',
+      dob: '',
       documentType: '',
-      idDocument_front: null,
-      idDocument_back: null,
+      idDocumentFront: null,
+      idDocumentBack: null,
       documentNumber: "",
-      expires_in: "",
+      documentExpiresin: "",
       permanentAddress: {
         desh: "",
         province: "",

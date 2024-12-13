@@ -25,7 +25,7 @@
       }
     },
     {
-      "name": "dateOfbirth",
+      "name": "dob",
       "label": "Date of birth",
       "type": "date",
       "placeholder": "Please enter your dateOfbirth",
@@ -41,6 +41,18 @@
       "validation": {
         "required": "Occupation is required"
       }
+    },
+    {
+      "name": "remarks",
+      "label": "remarks",
+      "type": "textarea",
+      "placeholder": "Please enter your remarks"
+    },
+    {
+      "name": "remarksHistory",
+      "label": "remarks history",
+      "type": "textarea",
+      "placeholder": "Please enter your remarks history"
     }
   ],
   "documentInformation": [
@@ -72,7 +84,7 @@
       }
     },
     {
-      "name": "documentfront",
+      "name": "idDocumentFront",
       "label": "Document front",
       "type": "file",
       "placeholder": "Please upload your documentfront",
@@ -81,7 +93,7 @@
       }
     },
     {
-      "name": "documentBack",
+      "name": "idDocumentBack",
       "label": "Document Back",
       "type": "file",
       "palceholder": "Please upload your documentBack",
