@@ -72,7 +72,9 @@ const Login: React.FC = () => {
               Login
             </button>
             <div className='my-4 text-center underline text-blue-400 cursor-pointer'>
-              Forget Password ?
+              <Link to='/forget-password'>
+                Forget Password ?
+              </Link>
             </div>
 
             <div className='text-center'>
