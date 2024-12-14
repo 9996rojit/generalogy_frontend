@@ -2,7 +2,7 @@
   "register": [
     {
       "name": "userName",
-      "label": "Username",
+      "label": "User Name",
       "type": "text",
       "placeholder": "Please enter your user name",
       "validation": {
@@ -15,7 +15,7 @@
     },
     {
       "name": "phoneNumber",
-      "label": "Phonenumber",
+      "label": "Phone Number",
       "type": "number",
       "placeholder": "Please enter your number",
       "validation": {

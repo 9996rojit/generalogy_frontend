@@ -12,6 +12,7 @@ import DashboardComponent from './pages/DashboardComponent';
 import SingleUserPage from './pages/SingleUserPage';
 import Home from './pages/Home';
 import GuestRoute from './components/GuestRoute';
+import ForgetPassword from './pages/ForgetPassword';
 
 // Child Components
 function Overview() {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
     element: (
       <GuestRoute>
         <Login />
+      </GuestRoute>
+    ),
+  },
+  {
+    path: "/forget-password",
+    element: (
+      <GuestRoute>
+        <ForgetPassword />
       </GuestRoute>
     ),
   },
