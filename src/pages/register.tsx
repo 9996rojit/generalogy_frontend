@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { register as RegisterForm } from '../fields/register.json'
+import { Link } from 'react-router-dom';
 
 interface RegisterFormData {
   userName: string;
@@ -28,9 +29,15 @@ const Register: React.FC = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-lamaPurpleLight p-6">
-      <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md bg-white p-8 rounded-lg shadow-md space-y-6">
-        <h2 className="text-2xl font-semibold text-center text-gray-800">Register</h2>
 
+      <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md bg-white p-8 rounded-lg shadow-md space-y-6">
+        <div className='flex items-center justify-center gap-2 mb-2'>
+          <img src="./logo_image.png" alt='logo' width={50} height={50} />
+          <div>
+            <h3 className='font-extrabold'>Bansawoli</h3>
+            <h4 className='font-semibold'>Register</h4>
+          </div>
+        </div>
         {RegisterForm.map(item => (
           <div key={item.name}>
             <label htmlFor={`${item.name}`} className="block text-sm font-medium text-gray-700">{item.label}</label>
@@ -49,6 +56,14 @@ const Register: React.FC = () => {
         <button type="submit" className="w-full py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 focus:outline-none">
           Register
         </button>
+
+        <div className='text-center'>
+          <p>Have a account?
+            <Link to='/'>
+              <span className='text-cyan-400 underline cursor-pointer'> Login</span>
+            </Link>
+          </p>
+        </div>
       </form >
     </div >
   );

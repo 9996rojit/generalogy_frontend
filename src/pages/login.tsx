@@ -5,7 +5,7 @@ import { useForm, FieldValues } from 'react-hook-form';
 import useAuth from '../hooks/useAuth';
 import { toast } from 'react-toastify';
 import Loading from '../components/loading';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Login: React.FC = () => {
@@ -71,6 +71,13 @@ const Login: React.FC = () => {
             >
               Login
             </button>
+            <div className='my-4 text-center underline text-blue-400 cursor-pointer'>
+              Forget Password ?
+            </div>
+
+            <div className='text-center'>
+              <p>Already have a Account? <Link to="create-account"><span className='text-cyan-400 cursor-pointer underline'>Create Account</span></Link></p>
+            </div>
           </form>
         </div>
       </div>

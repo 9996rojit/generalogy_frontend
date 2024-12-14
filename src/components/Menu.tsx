@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import LocalStorageUtil from "../hooks/localStorage";
 
 const menuItems = [
   {
@@ -109,8 +110,16 @@ const menuItems = [
   },
 ];
 
+
+
 const Menu = () => {
+  const navigate = useNavigate()
   const role = 'admin'
+
+  const handleLogout = () => {
+    LocalStorageUtil.removeItem('authToken')
+    navigate('/')
+  }
   return (
     <div className="mt-4 text-sm">
       {menuItems.map((i) => (
@@ -134,6 +143,10 @@ const Menu = () => {
           })}
         </div>
       ))}
+      <div className="mt-4 py-2 md:px-2 flex">
+        <img src="./logout.png" width={'20px'} height={'20px'} />
+        <button onClick={handleLogout} className="text-sm text-gray-500 ml-2">Logout</button>
+      </div>
     </div>
   );
 };
