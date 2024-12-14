@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import axios from "axios";
+import LocalStorageUtil from "./localStorage";
+import { redirect } from "react-router-dom";
 
 interface UserDetails {
   email: string;
@@ -37,6 +39,7 @@ const useAuth = (): UseAuthReturn => {
     try {
       const response = await axiosInstance.post<ApiResponse>(`/login`, { phoneNumber, password });
       setSuccess(response.data);
+      LocalStorageUtil.setItem('authToken', response.data.data.access)
       return response.data;
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed");

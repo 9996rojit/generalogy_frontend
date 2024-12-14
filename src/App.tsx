@@ -11,6 +11,7 @@ import DashboardContent from './pages/dashboard-content';
 import DashboardComponent from './pages/DashboardComponent';
 import SingleUserPage from './pages/SingleUserPage';
 import Home from './pages/Home';
+import GuestRoute from './components/GuestRoute';
 
 // Child Components
 function Overview() {
@@ -32,15 +33,27 @@ function Reports() {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: (
+      <GuestRoute>
+        <Login />
+      </GuestRoute>
+    ),
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <GuestRoute>
+        <Login />
+      </GuestRoute>
+    ),
   },
   {
     path: "/create-account",
-    element: <Register />,
+    element: (
+      <GuestRoute>
+        <Register />
+      </GuestRoute>
+    ),
   },
   {
     path: "/verify-otp",
@@ -48,9 +61,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/verify-kyc",
+    element: <KYCVerify />,
+  },
+  {
+    path: "/dashboard",
     element: (
       <ProtectedRoute>
-        <KYCVerify />
+        <DashboardComponent>
+          <DashboardContent />
+        </DashboardComponent>
       </ProtectedRoute>
     ),
   },

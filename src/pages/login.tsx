@@ -5,6 +5,7 @@ import { useForm, FieldValues } from 'react-hook-form';
 import useAuth from '../hooks/useAuth';
 import { toast } from 'react-toastify';
 import Loading from '../components/loading';
+import { useNavigate } from 'react-router-dom';
 
 
 const Login: React.FC = () => {
@@ -13,12 +14,16 @@ const Login: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<FieldValues>();
+  const navigate = useNavigate()
   const { login, success, loading, error } = useAuth()
   const onSubmit = async (data: FieldValues) => {
     await login(data.phoneNumber, data.password)
   };
   if (success) {
     toast.success(success.message, { position: 'bottom-center' })
+    setTimeout(() => {
+      navigate('/dashboard')
+    }, 1000)
   }
   if (error) {
     toast.error(error, { position: 'bottom-center' })
