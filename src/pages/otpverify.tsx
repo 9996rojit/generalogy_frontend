@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import useAuth from '../hooks/useAuth';
+import LocalStorageUtil from '../hooks/localStorage';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 interface OTPFormData {
   otp: string[];
@@ -8,15 +12,18 @@ interface OTPFormData {
 
 const OTPVerify: React.FC = () => {
   const { control, handleSubmit, formState: { errors } } = useForm<OTPFormData>({
-    defaultValues: { otp: ['', '', '', ''] },
+    defaultValues: { otp: ['', '', '', '', '', ''] },
   });
-
+  const { verifyUserPhone, loading, error, success } = useAuth()
+  const navigate = useNavigate()
   // Refs to manage focus for each input
   const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
 
-  const onSubmit = (data: OTPFormData) => {
+  const onSubmit = async (data: OTPFormData) => {
+    const phoneNumber: string | null = LocalStorageUtil.getItem('phoneNumber')
     const otpCode = data.otp.join('');
     console.log('OTP Code:', otpCode);
+    await verifyUserPhone(phoneNumber, otpCode)
   };
 
   const handleInputChange = (
@@ -46,6 +53,15 @@ const OTPVerify: React.FC = () => {
       }
     }
   };
+  if (success) {
+    toast.success(success.message, { position: 'bottom-center' })
+    setTimeout(() => {
+      navigate('/dashboard')
+    }, 1000)
+  }
+  if (error) {
+    toast.error(error, { position: 'bottom-center' })
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-lamaPurpleLight p-6">
@@ -55,7 +71,7 @@ const OTPVerify: React.FC = () => {
 
         {/* OTP Inputs */}
         <div className="flex justify-center space-x-2">
-          {Array.from({ length: 4 }).map((_, index) => (
+          {Array.from({ length: 6 }).map((_, index) => (
             <Controller
               key={index}
               name={`otp.${index}` as const}

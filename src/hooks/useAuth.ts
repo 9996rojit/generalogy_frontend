@@ -2,10 +2,10 @@
 import { useState } from "react";
 import axios from "axios";
 import LocalStorageUtil from "./localStorage";
-import { redirect } from "react-router-dom";
 
 interface UserDetails {
-  email: string;
+  phoneNumber: string
+  email?: string;
   password: string;
   [key: string]: any; // Add more fields as required
 }
@@ -17,9 +17,10 @@ interface ApiResponse {
 
 interface UseAuthReturn {
   login: (phoneNumber: string, password: string) => Promise<ApiResponse | undefined>;
-  register: (userDetails: UserDetails) => Promise<ApiResponse | undefined>;
+  registerUser: (userDetails: UserDetails) => Promise<ApiResponse | undefined>;
   forgotPassword: (email: string) => Promise<ApiResponse | undefined>;
   resetPassword: (token: string, newPassword: string) => Promise<ApiResponse | undefined>;
+  verifyUserPhone: (phoneNumber: string | null, otp: string) => Promise<ApiResponse | undefined>;
   loading: boolean;
   error: string | null;
   success: ApiResponse | null;
@@ -48,12 +49,26 @@ const useAuth = (): UseAuthReturn => {
     }
   };
 
-  const register = async (userDetails: UserDetails): Promise<ApiResponse | undefined> => {
+  const registerUser = async (userDetails: UserDetails): Promise<ApiResponse | undefined> => {
     setLoading(true);
     setError(null);
     try {
       const response = await axiosInstance.post<ApiResponse>(`/register`, userDetails);
       setSuccess(response.data);
+      return response.data;
+    } catch (err: any) {
+      setError(err.response?.data?.message || "Registration failed");
+    } finally {
+      setLoading(false);
+    }
+  };
+  const verifyUserPhone = async (phoneNumber: string | null, otp: string): Promise<ApiResponse | undefined> => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axiosInstance.post<ApiResponse>(`/verify-otp`, { phoneNumber, otp });
+      setSuccess(response.data);
+      LocalStorageUtil.setItem('authToken', response.data.data.access)
       return response.data;
     } catch (err: any) {
       setError(err.response?.data?.message || "Registration failed");
@@ -92,9 +107,10 @@ const useAuth = (): UseAuthReturn => {
 
   return {
     login,
-    register,
+    registerUser,
     forgotPassword,
     resetPassword,
+    verifyUserPhone,
     loading,
     error,
     success,

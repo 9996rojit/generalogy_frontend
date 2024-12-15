@@ -1,15 +1,15 @@
 {
   "register": [
     {
-      "name": "userName",
+      "name": "fullName",
       "label": "User Name",
       "type": "text",
       "placeholder": "Please enter your user name",
       "validation": {
-        "required": "Password is required",
+        "required": "User name is required",
         "minLength": {
           "value": 6,
-          "message": "Password must be at least 6 characters"
+          "message": "User name must be at least 6 characters"
         }
       }
     },
@@ -23,6 +23,10 @@
         "minlength": {
           "value": 10,
           "message": "Number must be atleast 10 characters"
+        },
+        "maxLength":{
+          "value":10,
+          "message":"Number must only 10 characters"
         }
       }
     },
@@ -48,6 +52,24 @@
         "required": "Please confirm your password"
       },
       "watch": "Password"
+    },
+    {
+      "name": "bloodGroup",
+      "label": "Blood Group",
+      "type": "text",
+      "placeholder": "Please enter your blood group",
+      "validation": {
+        "required": "Blood group is required"
+      }
+    },
+    {
+      "name": "occupation",
+      "label": "Occupation",
+      "type": "text",
+      "placeholder": "Please enter your occupation",
+      "validation": {
+        "required": "Occupation is required"
+      }
     }
   ]
 }

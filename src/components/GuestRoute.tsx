@@ -8,7 +8,7 @@ interface GuestRouteProps {
 function GuestRoute({ children }: GuestRouteProps) {
   const isAuthenticated = !LocalStorageUtil.getItem('authToken'); // Adjust as per your auth logic
 
-  return isAuthenticated ? children : <Navigate to="/dashboard" replace />;
+  return isAuthenticated ? children : <Navigate to="/dashboard  " replace />;
 }
 
 
